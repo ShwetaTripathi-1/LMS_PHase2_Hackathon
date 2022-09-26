@@ -2,7 +2,8 @@ package Hooks;
 
 import java.io.IOException;
 
-import Base.BaseClass;
+import StepDefinition.BaseClass;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class LMS_Hooks extends BaseClass {
@@ -16,12 +17,12 @@ public class LMS_Hooks extends BaseClass {
 		
 	}
 	
-//	@After
-//	public void browserTearDown() { 
-//
-//		System.out.println("After Hooks ");
-//		tearDown();
-//
-//	}
+/*@After("@driversetup")
+public void browserTearDown() { 
+
+	System.out.println("After Hooks ");
+	tearDown();
+
+	}*/
 
 }

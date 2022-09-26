@@ -5,8 +5,8 @@ import java.util.Properties;
 
 public class ReadConfig {
 	Properties prop;
-	public ReadConfig()
-	{
+
+	public ReadConfig() {
 		String FilePath = ".//Configuration/ReadConfig.properties";
 		try {
 			FileInputStream fis = new FileInputStream(FilePath);
@@ -15,15 +15,17 @@ public class ReadConfig {
 		} catch (Exception e) {
 			System.out.println("Error message " + e.getMessage());
 		}
-		
+
 	}
-	    // Get Application baseURl
-		public String getApplicationURL() {
-			return prop.getProperty("baseurl");
-			//System.out.println();
-		}
-		// Get browser Name
-		public String getBrowserName() {
-			return prop.getProperty("browser");
-		}
+
+	// Get Application baseURl
+	public String getApplicationURL() {
+		return prop.getProperty("baseurl");
+		// System.out.println();
+	}
+
+	// Get browser Name
+	public String getBrowserName() {
+		return prop.getProperty("browser");
+	}
 }
