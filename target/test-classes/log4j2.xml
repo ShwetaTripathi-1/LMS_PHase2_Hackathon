@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" strict="true">
 	<Properties>
-		<Property name="filename">C:\Users\Diksha\eclipse-workspace\LMS_PHase2_Hackathon\src\test\resources\Logs\logs.log
+		<Property name="filename">.\src\test\resources\Logs\logs.log
 </Property>
 	</Properties>
 	<Appenders>

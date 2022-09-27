@@ -1,5 +1,5 @@
 Feature: Validating the text fields on the Registration page
-@driversetup
+
  Scenario: Validating FirstName text field
     Given     User is on the Registration Page
     When User fills the First Name in Alphabets only
@@ -62,22 +62,21 @@ Feature: Validating the text fields on the Registration page
     
     Scenario Outline:  Validating Registration Page text field with multiple values
       Given User is on the Registration Page
-      When User enter FirstName "<fname>", LastName "<lname>" , Address "<add>" , StreetName "<stName>" , City "<city>" , State"<state>" , Zip "<zip>" , BithDate "<dob>" , PhoneNumber "<phn>" , UserName "<userName>" , Password "<pwd>" , Email "<email>"
-      And User enter SignUp Button
+      When User enter FirstName "<fname>", LastName "<lname>" , Address "<add>" , StreetName "<stName>" , City "<city>" , State "<state>" , Zip "<zip>" , BithDate "<dob>" , PhoneNumber "<phn>" , UserName "<userName>" , Password "<pwd>" , Email "<email>"
+      
       Then User Successfully SignUp
-    Examples:
+    	Examples:
 
-| fname | lname | add   | stName | city  | state | zip   | dob   | phn   | userName | pwd   | email |
-|No Data|No Data|No Data|No Data |No Data|No Data|No Data|No Data|No Data|  No Data |No Data|No Data|
-|Invalid|Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Invalid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Invalid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Valid  |Invalid   |Valid   |Valid |Valid  |Valid  |Valid   |Valid      |Valid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Invalid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Invalid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Invalid  |Valid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Invalid  |Valid  |Valid     |Valid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid    |Invalid|Valid     |Valid  |Valid   |
-|Valid |Valid  |valid  |Valid   |Valid   |Valid |Valid  |Valid    |Valid  |Invalid  |Valid   |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Invalid  |Valid   |
-|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Invalid   |
+			| fname | lname | add   | stName | city  | state | zip   | dob   | phn   | userName | pwd   | email |
+			|||| ||||||   |||
+			|123_Invalid|Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |123_Invalid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |123_Invalid  |Valid   |Valid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |Valid  |123_Invalid   |Valid   |Valid |Valid  |Valid  |Valid   |Valid      |Valid  |Valid   |
+			|Valid |Valid  |Valid  |Valid   |123_Invalid   |Valid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |Valid  |Valid   |Valid   |123_Invalid |Valid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |Valid  |Valid   |Valid   |Valid |123_Invalid  |Valid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |123_Invalid  |Valid  |Valid     |Valid  |Valid   |
+			|Valid |Valid  |Valid  |Valid   |Valid   |Valid |Valid  |Valid    |123_Invalid|Valid     |Valid  |Valid   |
+			|Valid |Valid  |valid  |Valid   |Valid   |Valid |Valid  |Valid    |Valid  |  |Valid   |Valid   |
+			|Chaman |Sharma  |1234  |CLoud  |Wichita   |Kansas |45634  |12-09-2019  |1231232344  |shweta     |123_Invalid  |s@s.com   |

@@ -1,4 +1,5 @@
 package Pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -7,62 +8,54 @@ import org.openqa.selenium.support.PageFactory;
 
 import StepDefinition.BaseClass;
 
-public class loginPage extends BaseClass{
-	
+public class loginPage extends BaseClass {
+
 	WebDriver ldriver;
-	
-	public loginPage (WebDriver rdriver)
-	{
-	ldriver = rdriver;
-	 PageFactory.initElements( rdriver,this);
-	 }
-	
-	
-	@FindBy(xpath="//input[@id='username']")
+
+	public loginPage(WebDriver rdriver) {
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+	}
+
+	@FindBy(xpath = "//input[@id='username']")
 	@CacheLookup
 	WebElement txtUserName;
-	
-	@FindBy(xpath="//input[@id='password']")
+
+	@FindBy(xpath = "//input[@id='password']")
 	@CacheLookup
 	WebElement txtPassword;
-	
-	@FindBy(xpath="//button[@id='login']")
+
+	@FindBy(xpath = "//button[@id='login']")
 	@CacheLookup
 	WebElement btnLogin;
-	
-	@FindBy(xpath="register_link")
+
+	@FindBy(xpath = "register_link")
 	@CacheLookup
 	WebElement register_lnk;
-	
-	public void setUserName(String uname)
-	{
+
+	public void setUserName(String uname) {
 		txtUserName.clear();
 		txtUserName.sendKeys(uname);
-		
+
 	}
-	
-	public void setPassword(String pwd)
-	{
+
+	public void setPassword(String pwd) {
 		txtPassword.clear();
 		txtPassword.sendKeys(pwd);
 	}
-	
-	public void clickLoginBtn()
-	{
+
+	public void clickLoginBtn() {
 		btnLogin.click();
-		
+
 	}
-	
-	
+
 	public boolean LogInBtnVisibility() {
-    	return btnLogin.isDisplayed();
-}
+		return btnLogin.isDisplayed();
+	}
 
 	public void Lnk_register() {
-		
+
 		register_lnk.click();
-		
-		
+
 	}
 }
-

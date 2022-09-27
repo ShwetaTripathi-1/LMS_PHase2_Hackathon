@@ -1,5 +1,6 @@
 
 package Pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -9,482 +10,405 @@ import org.openqa.selenium.support.ui.Select;
 
 import StepDefinition.BaseClass;
 
+public class registrationPage extends BaseClass {
 
-
-public class registrationPage extends BaseClass{
-	
 	public WebDriver ldriver;
-	
-	public registrationPage (WebDriver rdriver) 
-	{
-	 ldriver = rdriver;
-	 PageFactory.initElements( rdriver,this);
-	 }
-	
+
+	public registrationPage(WebDriver rdriver) {
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+	}
+
 	@FindBy(xpath = "//div[@name='Sign Up form']")
 	WebElement textSignUpForm;
-	
-	@FindBy(xpath="FirstName")
+
+	@FindBy(xpath = "FirstName")
 	@CacheLookup
 	WebElement txtFirstName;
-	
-	@FindBy(xpath="LastName")
+
+	@FindBy(xpath = "LastName")
 	@CacheLookup
 	WebElement txtLastName;
 
-	@FindBy(xpath="Address")
+	@FindBy(xpath = "Address")
 	@CacheLookup
 	WebElement txtAddress;
 
-	@FindBy(xpath="StreetName")
+	@FindBy(xpath = "StreetName")
 	@CacheLookup
 	WebElement txtStreetName;
-	
-	@FindBy(xpath="City")
+
+	@FindBy(xpath = "City")
 	@CacheLookup
 	WebElement txtCity;
-	
-	@FindBy(xpath="State")
+
+	@FindBy(xpath = "State")
 	@CacheLookup
 	WebElement drpdnstate;
-	
-	@FindBy(xpath="zipCode")
+
+	@FindBy(xpath = "zipCode")
 	@CacheLookup
 	WebElement txtzipCode;
-	
-	@FindBy(xpath="BithDate")
+
+	@FindBy(xpath = "BithDate")
 	@CacheLookup
 	WebElement drpdnBirthDate;
 
-	@FindBy(xpath="PhoneNumber")
+	@FindBy(xpath = "PhoneNumber")
 	@CacheLookup
 	WebElement txtPhoneNumber;
 
-	@FindBy(xpath="UserName")
+	@FindBy(xpath = "UserName")
 	@CacheLookup
 	WebElement txtUserName;
 
-	@FindBy(xpath="Password")
+	@FindBy(xpath = "Password")
 	@CacheLookup
 	WebElement txtpassword;
 
-	@FindBy(xpath="email")
+	@FindBy(xpath = "email")
 	@CacheLookup
 	WebElement txtEmail;
 
-	@FindBy(xpath="SignUp" )
+	@FindBy(xpath = "SignUp")
 	@CacheLookup
 	WebElement btnSignUp;
 
-	@FindBy(xpath="logIn")
+	@FindBy(xpath = "logIn")
 	@CacheLookup
 	WebElement btnLogin;
-	
+
 	public String signUpFormText() {
 		return textSignUpForm.getText();
 	}
-	
-	public boolean txtFstNameVisibility()
-	{
+
+	public boolean txtFstNameVisibility() {
 		try {
-			 if(txtFirstName.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtFirstName.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
-		
-		
-	}
-	
-	public boolean txtLstNameVisibility()
-	{
-		
-		try {
-			 if(txtLastName.getText().isBlank())
-			 {
-				 return false;
-			 }
-			return true;
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
 
-	public boolean txtAddressHouseNumVisibility()
-	{
-		
+	public boolean txtLstNameVisibility() {
+
 		try {
-			 if(txtAddress.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtLastName.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
-	}
-	public boolean txtStreetNameVisibility()
-	{
-		
-		try {
-			 if(txtStreetName.getText().isBlank())
-			 {
-				 return false;
-			 }
-			return true;
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
-	}
-	public boolean txtCityVisibility()
-	{
-		
-		try {
-			 if(txtCity.getText().isBlank())
-			 {
-				 return false;
-			 }
-			return true;
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
-	}
-	
-	public boolean drpdnstateVisibility()
-	{
-		
-		
-		
-		try {
-			 if(drpdnstate.getText().isBlank())
-			 {
-				 return false;
-			 }
-			return true;
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
 
-	public boolean drpdnBirthDateVisibility()
-	{
-		
+	public boolean txtAddressHouseNumVisibility() {
+
 		try {
-			 if(drpdnBirthDate.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtAddress.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
+
+	}
+
+	public boolean txtStreetNameVisibility() {
+
+		try {
+			if (txtStreetName.getText().isBlank()) {
+				return false;
+			}
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+
+	}
+
+	public boolean txtCityVisibility() {
+
+		try {
+			if (txtCity.getText().isBlank()) {
+				return false;
+			}
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+
+	}
+
+	public boolean drpdnstateVisibility() {
+
+		try {
+			if (drpdnstate.getText().isBlank()) {
+				return false;
+			}
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+
+	}
+
+	public boolean drpdnBirthDateVisibility() {
+
+		try {
+			if (drpdnBirthDate.getText().isBlank()) {
+				return false;
+			}
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
 	}
-	
-	public boolean txtzipCodeVisibility()
-	{
-		
+
+	public boolean txtzipCodeVisibility() {
+
 		try {
-			 if(txtzipCode.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtzipCode.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
-	
-	
-	
-	public boolean txtUserNameVisibility()
-	{
-		
+
+	public boolean txtUserNameVisibility() {
+
 		try {
-			 if(txtUserName.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtUserName.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
-		
+
 	}
-	
-	public boolean txtpasswordVisibility()
-	{
-		
+
+	public boolean txtpasswordVisibility() {
+
 		try {
-			 if(txtpassword.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtpassword.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
-	
-	public boolean txtPhoneNumberVisibility()
-	{
-		
+
+	public boolean txtPhoneNumberVisibility() {
+
 		try {
-			 if(txtPhoneNumber.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtPhoneNumber.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
-	
-	public boolean txtEmailVisibility()
-	{
+
+	public boolean txtEmailVisibility() {
 		try {
-			 if(txtEmail.getText().isBlank())
-			 {
-				 return false;
-			 }
+			if (txtEmail.getText().isBlank()) {
+				return false;
+			}
 			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
-	
-	
+
 	public boolean signUpBtnVisibility() {
-		
-		
+
 		try {
 			return btnSignUp.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   return false;
-		}
-		
+
 	}
-	
+
 	public void signUp() {
-		
-			try {
-				 btnSignUp.click();
-				 
-			}
-			catch (org.openqa.selenium.NoSuchElementException e) {
-			  
-			}
+
+		try {
+			btnSignUp.click();
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
 	}
-	
+
 	public void setFirstName(String firstname) {
-		
-		
+
 		try {
 			txtFirstName.clear();
 			txtFirstName.sendKeys(firstname);
-			 
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		  
-		}
-		
+
 	}
-	
-	public void setLastName(String lastname)
-	{
-		
-		
+
+	public void setLastName(String lastname) {
+
 		try {
 			txtLastName.clear();
 			txtLastName.sendKeys(lastname);
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		  
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	
-	public void setAddress(String address) 
-	{
-		
+
+	public void setAddress(String address) {
+
 		try {
 			txtAddress.clear();
 			txtAddress.sendKeys(address);
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		  
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void setStreetName(String street)
-	{
-		
+
+	public void setStreetName(String street) {
+
 		try {
 			txtStreetName.clear();
 			txtStreetName.sendKeys(street);
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		  
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void setCity(String city)
-	{
-	
+
+	public void setCity(String city) {
+
 		try {
 			txtCity.clear();
 			txtCity.sendKeys(city);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		  
-		}
-		
-		
+
 	}
-	
-	public Select selectState()
-	{
-		
-		
+
+	public Select selectState() {
+
 		try {
 			return new Select(drpdnstate);
-			
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return null;
-		   
+
 		}
 	}
-	
-	public void setZip(String zip) 
-	{
-		
-		try {
+
+	public void setZip(String int1) {
+
+		try { 
+			
 			txtzipCode.clear();
-			txtzipCode.sendKeys(zip);
-			
-			
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-			
-		   
+			txtzipCode.sendKeys(int1);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public Select selectDateOfBirth()
-	{
-		
-		
+
+	public Select selectDateOfBirth() {
+
 		try {
 			return new Select(drpdnBirthDate);
-			
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return null;
-		   
+
 		}
-		
-		
+
 	}
-	
-	public void setPhoneNumber(String phoneNumber)
-	{
-		
+
+	public void setPhoneNumber(CharSequence[] phnNo) {
+
 		try {
 			txtPhoneNumber.clear();
-			txtPhoneNumber.sendKeys(phoneNumber);
-			
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
+			txtPhoneNumber.sendKeys(phnNo);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void setUserName(String username) 
-	{
-		
-		
+
+	public void setUserName(String username) {
+
 		try {
 			txtUserName.clear();
 			txtUserName.sendKeys(username);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
-		}
-		
+
 	}
-	
-	public void setPassword(String password)
-	{
-	
-		
+
+	public void setPassword(String password) {
+
 		try {
 			txtpassword.clear();
 			txtpassword.sendKeys(password);
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void setEmail(String email)
-	{
-	
-		
+
+	public void setEmail(String email) {
+
 		try {
 			txtEmail.clear();
 			txtEmail.sendKeys(email);
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void clickRegPageSignUpBtn()
-	{
-		
+
+	public void clickRegPageSignUpBtn() {
+
 		try {
 			btnSignUp.click();
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-	
-	public void clickRegPageLoginBtn() 
-	{
+
+	public void clickRegPageLoginBtn() {
 		try {
 			btnLogin.click();
-		}
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		   
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 	}
-}
 
+	public void setPhoneNumber(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setZip1(Integer int1) {
+		// TODO Auto-generated method stub
+		
+	}
+}
